@@ -52,8 +52,8 @@ export default {
 
     setTimeout(() => {
       this.is3Min = true;
-    }, 3000);
-    // }, 315000);
+      // }, 3000);
+    }, 315000);
   },
 
   methods: {

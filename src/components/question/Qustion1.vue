@@ -21,18 +21,18 @@
         <v-row v-if="indexItem == 0">
           <v-col cols="0" md="4" sm="0"> </v-col>
           <v-col cols="12" md="4" sm="12" class="text-center">
-            <v-text-field label="ชื่อ" v-model="name"></v-text-field>
+            <v-text-field label="ชื่อ" v-model="form.name"></v-text-field>
           </v-col>
         </v-row>
         <v-row v-if="indexItem == 0">
           <v-col cols="0" md="4" sm="0"> </v-col>
           <v-col cols="12" md="4" sm="12" class="text-center">
-            <v-text-field label="นามสกุล" v-model="surname"></v-text-field>
+            <v-text-field label="นามสกุล" v-model="form.surname"></v-text-field>
           </v-col>
         </v-row>
         <v-row v-if="indexItem == 0">
           <v-col cols="12" class="text-center">
-            <v-btn @click="nextItem()" :disabled="!name || !surname"
+            <v-btn @click="nextItem()" :disabled="!form.name || !form.surname"
               >start</v-btn
             >
           </v-col>
@@ -67,8 +67,10 @@ export default {
   components: {},
   data() {
     return {
-      name: "",
-      surname: "",
+      form: {
+        name: "",
+        surname: "",
+      },
       indexItem: 0,
       itemChoice: [
         {
@@ -84,20 +86,20 @@ export default {
   mounted() {},
 
   methods: {
-    // async sendDataToSheet() {
-    //   try {
-    //     const auth = await authorize();
-    //     const spreadsheetId = "1j56RZXEVjYBFN5T0EOn1hzxcgvhRelMZh3GU_fdBjmA";
-    //     const range = "Sheet1!A1"; // Replace with the sheet and cell where you want to write data
-    //     const range1 = "Sheet1!B1"; // Replace with the sheet and cell where you want to write data
-    //     const data = "Hello, World!"; // Data to send to the sheet
-    //     const data1 = "surr"; // Data to send to the sheet
+    sendData() {
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwK8u2w43ZqeDUjb9mhtuknmOEbTsuAFg41u0413PRa8EeJicNhoGyqJo5Flp8Mr71BmA/exec";
+      const form = this.$refs.form.$el;
 
-    //     await writeToSheet(auth, spreadsheetId, range, data, range1, data1);
-    //   } catch (error) {
-    //     console.error("Error sending data to Google Sheet:", error);
-    //   }
-    // },
+      axios
+        .post(scriptURL, new FormData(form))
+        .then(() => {
+          alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
+        })
+        .catch((error) => {
+          console.error("Error!", error.message);
+        });
+    },
 
     goToSituation1() {
       this.$router.push("/Situation1");
@@ -108,7 +110,7 @@ export default {
       //   this.indexItem += 1;
       // }
       this.$router.push("/Video0");
-      // this.sendDataToSheet();
+      this.sendData();
     },
     backItem() {
       if (!this.indexItem == 0) {
