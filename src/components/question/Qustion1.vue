@@ -37,6 +37,11 @@
                 name="นามสกุล"
               ></v-text-field>
             </v-col>
+            <v-col cols="0" md="4" sm="0"> </v-col>
+            <v-col cols="0" md="4" sm="0"> </v-col>
+            <v-col cols="12" md="12" sm="12" class="d-flex justify-center">
+              {{ form.time }}
+            </v-col>
             <!-- <v-col cols="0" md="4" sm="0"> </v-col>
           <v-col cols="12" md="4" sm="12" class="text-center">
             <v-text-field
@@ -91,6 +96,7 @@
 <script>
 // import { defineComponent } from "vue";
 // import { authorize, writeToSheet } from "../../plugins/googleSheetsService";
+import dayjs from "dayjs";
 
 export default {
   components: {},
@@ -99,6 +105,7 @@ export default {
       form: {
         name: "",
         nickname: "",
+        time: dayjs(new Date()).format("DD/MM/YYYY | HH:mm:ss น."),
       },
       indexItem: 0,
       itemChoice: [
