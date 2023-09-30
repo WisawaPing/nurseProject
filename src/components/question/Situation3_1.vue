@@ -85,31 +85,31 @@ export default {
   setup(props) {
     const itemChoice = [
       {
-        src: new URL("../../assets/slide/IMG_4793.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4793.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4794.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4794.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4795.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4795.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4796.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4796.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4797.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4797.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4789.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4789.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4790.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4790.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4791.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4791.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4798.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4798.jpg", import.meta.url).href,
       },
     ];
 
@@ -150,31 +150,31 @@ export default {
 
       // itemChoice: [
       //   {
-      //     src: new URL("../../assets/slide/IMG_4793.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4793.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4794.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4794.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4795.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4795.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4796.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4796.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4797.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4797.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4789.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4789.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4790.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4790.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4791.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4791.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4798.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4798.jpg", import.meta.url).href,
       //   },
       // ],
     };

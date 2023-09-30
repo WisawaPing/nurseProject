@@ -132,7 +132,7 @@ export default {
       indexItem: 0,
       itemChoice: [
         {
-          src: new URL("../../assets/slide/IMG_4701.JPG", import.meta.url),
+          src: new URL("@/assets/slide/IMG_4701.JPG", import.meta.url),
         },
       ],
       linkVideo1: "",

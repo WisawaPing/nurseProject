@@ -67,22 +67,22 @@ export default {
   setup(props) {
     const itemChoice = [
       {
-        src: new URL("../../assets/slide/IMG_4720.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4720.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4721.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4721.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4722.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4722.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4723.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4723.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4724.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4724.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4725.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4725.jpg", import.meta.url).href,
       },
     ];
 
@@ -115,22 +115,22 @@ export default {
       is3Min: false,
       // itemChoice: [
       //   {
-      //     src: new URL("../../assets/slide/IMG_4720.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4720.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4721.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4721.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4722.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4722.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4723.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4723.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4724.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4724.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4725.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4725.jpg", import.meta.url).href,
       //   },
       // ],
     };

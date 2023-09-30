@@ -44,7 +44,7 @@ export default {
   setup(props) {
     const itemChoice = [
       {
-        src: new URL("../../assets/slide/IMG_4737.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4737.jpg", import.meta.url).href,
       },
     ];
 
@@ -61,7 +61,7 @@ export default {
       ],
       // itemChoice: [
       //   {
-      //     src: new URL("../../assets/slide/IMG_4737.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4737.jpg", import.meta.url).href,
       //   },
       // ],
     };

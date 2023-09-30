@@ -51,13 +51,13 @@ export default {
   setup(props) {
     const itemChoice = [
       {
-        src: new URL("../../assets/slide/IMG_4732.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4732.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4735.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4735.jpg", import.meta.url).href,
       },
       {
-        src: new URL("../../assets/slide/IMG_4736.jpg", import.meta.url).href,
+        src: new URL("@/assets/slide/IMG_4736.jpg", import.meta.url).href,
       },
     ];
 
@@ -80,13 +80,13 @@ export default {
 
       // itemChoice: [
       //   {
-      //     src: new URL("../../assets/slide/IMG_4732.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4732.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4735.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4735.jpg", import.meta.url).href,
       //   },
       //   {
-      //     src: new URL("../../assets/slide/IMG_4736.jpg", import.meta.url).href,
+      //     src: new URL("@/assets/slide/IMG_4736.jpg", import.meta.url).href,
       //   },
       // ],
     };
