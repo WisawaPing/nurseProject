@@ -11,36 +11,48 @@
               >
             </v-col>
             <v-col cols="12" md="12" sm="12">
-              <img
-                :src="itemChoice[indexItem].src"
-                height="400"
-                class="responsive-image"
-              />
+              <img :src="url" height="400" class="responsive-image" />
             </v-col>
           </v-row>
 
-          <v-row v-if="indexItem == 0">
-            <v-col cols="0" md="4" sm="0"> </v-col>
-            <v-col cols="12" md="4" sm="12" class="text-center">
+          <v-row v-if="indexItem == 0" class="d-flex justify-center">
+            <v-col cols="12" sm="9" md="7" class="text-center">
               <v-text-field
+                clearable
+                hide-details="auto"
+                density="compact"
+                variant="solo-filled"
                 label="ชื่อ"
+                placeholder="กรุณากรอก"
                 v-model="form.name"
                 name="ชื่อ"
               ></v-text-field>
             </v-col>
-            <v-col cols="0" md="4" sm="0"> </v-col>
-            <v-col cols="0" md="4" sm="0"> </v-col>
-            <v-col cols="12" md="4" sm="12" class="text-center">
+
+            <v-col cols="12" sm="9" md="7" class="text-center">
               <v-text-field
+                clearable
+                hide-details="auto"
+                density="compact"
+                variant="solo-filled"
                 label="นามสกุล"
+                placeholder="กรุณากรอก"
                 v-model="form.nickname"
                 name="นามสกุล"
               ></v-text-field>
             </v-col>
-            <v-col cols="0" md="4" sm="0"> </v-col>
-            <v-col cols="0" md="4" sm="0"> </v-col>
-            <v-col cols="12" md="12" sm="12" class="d-flex justify-center">
-              {{ form.time }}
+
+            <v-col cols="12" sm="9" md="7" class="d-flex justify-center">
+              <v-text-field
+                class="disabled_input"
+                hide-details="auto"
+                density="compact"
+                variant="solo-filled"
+                label="วัน-เวลา"
+                v-model="form.time"
+                name="วัน-เวลา"
+                bg-color="grey-lighten-2"
+              ></v-text-field>
             </v-col>
             <!-- <v-col cols="0" md="4" sm="0"> </v-col>
           <v-col cols="12" md="4" sm="12" class="text-center">
@@ -64,8 +76,11 @@
           <v-row v-if="indexItem == 0">
             <v-col cols="12" class="text-center">
               <v-btn
-                @click="nextItem()"
+                color="light-green-darken-1"
+                size="large"
+                @click="sendData()"
                 :disabled="!form.name || !form.nickname"
+                :loading="loadingBtn"
                 >start</v-btn
               >
             </v-col>
@@ -96,10 +111,17 @@
 <script>
 // import { defineComponent } from "vue";
 // import { authorize, writeToSheet } from "../../plugins/googleSheetsService";
+import axios from "axios";
 import dayjs from "dayjs";
 
 export default {
   components: {},
+
+  setup(props) {
+    const url = new URL("@/assets/slide/IMG_4701.JPG", import.meta.url).href;
+
+    return { url };
+  },
   data() {
     return {
       form: {
@@ -110,28 +132,47 @@ export default {
       indexItem: 0,
       itemChoice: [
         {
-          src: new URL("../../assets/slide/IMG_4701.jpg", import.meta.url).href,
+          src: new URL("../../assets/slide/IMG_4701.JPG", import.meta.url),
         },
       ],
       linkVideo1: "",
 
       directDownloadLink: null,
+
+      loadingBtn: false,
     };
   },
 
   mounted() {},
 
   methods: {
-    sendData() {
+    async sendData() {
+      this.loadingBtn = true;
+
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbwK8u2w43ZqeDUjb9mhtuknmOEbTsuAFg41u0413PRa8EeJicNhoGyqJo5Flp8Mr71BmA/exec";
       const form = document.forms["hello-sheet"];
 
-      console.log(new FormData(form));
+      // const formData = new FormData(form);
+
+      // const response = await axios.post(scriptURL, formData, {
+      //   headers: { "Content-Type": "multipart/form-data" },
+      // });
 
       fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
-        .catch((error) => console.error("Error!", error.message));
+        .then((response) => {
+          this.loadingBtn = false;
+
+          alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
+          this.nextItem();
+        })
+        .catch((error) => {
+          this.loadingBtn = false;
+
+          console.error("Error!", error.message);
+          alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
+          this.nextItem();
+        });
     },
 
     goToSituation1() {
@@ -143,7 +184,6 @@ export default {
       //   this.indexItem += 1;
       // }
       this.$router.push("/Video0");
-      this.sendData();
     },
     backItem() {
       if (!this.indexItem == 0) {
@@ -182,90 +222,10 @@ export default {
   height: auto;
 }
 </style>
-<!-- 
-<template>
-  <div class="pt-4"></div>
-  <div class="container">
-    <div>
-      <h3 class="text-center">ฟอร์มบันทึกข้อมูลด้วย HTML</h3>
-    </div>
-    <form method="post" autocomplete="off" name="hello-sheet">
-      <div class="form-group">
-        <label for="name">ชื่อ สกุล</label>
-        <input
-          v-model="form.name"
-          type="text"
-          class="form-control"
-          placeholder="ชื่อ สกุล"
-          name="ชื่อ-สกุล"
-        />
-      </div>
-      <div class="form-group">
-        <label for="name">ชื่อเล่น</label>
-        <input
-          v-model="form.nickname"
-          type="text"
-          class="form-control"
-          placeholder="ชื่อเล่น"
-          name="ชื่อเล่น"
-        />
-      </div>
-      <div class="form-group">
-        <label for="name">เบอร์โทร</label>
-        <input
-          v-model="form.tel"
-          type="text"
-          class="form-control"
-          placeholder="เบอร์โทร"
-          name="เบอร์โทร"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">อีเมล</label>
-        <input
-          v-model="form.email"
-          type="email"
-          name="อีเมล"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="อีเมล"
-        />
-      </div>
 
-      <button @click.prevent="sendData" type="submit">บันทึก</button>
-    </form>
-  </div>
-</template>
 
-<script>
-import axios from "axios";
-
-export default {
-  data: () => ({
-    ImgItems: [
-      {
-        src: "/public/1.jpg",
-      },
-    ],
-    form: {
-      name: "",
-      nickname: "",
-      tel: "",
-      email: "",
-    },
-  }),
-
-  methods: {
-    sendData() {
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbwK8u2w43ZqeDUjb9mhtuknmOEbTsuAFg41u0413PRa8EeJicNhoGyqJo5Flp8Mr71BmA/exec";
-      const form = document.forms["hello-sheet"];
-
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
-        .catch((error) => console.error("Error!", error.message));
-    },
-  },
-};
-</script> -->
+<style scoped>
+.disabled_input {
+  pointer-events: none;
+}
+</style>

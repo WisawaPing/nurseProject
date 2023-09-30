@@ -63,6 +63,31 @@
 <script>
 export default {
   components: {},
+
+  setup(props) {
+    const itemChoice = [
+      {
+        src: new URL("../../assets/slide/IMG_4720.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4721.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4722.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4723.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4724.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4725.jpg", import.meta.url).href,
+      },
+    ];
+
+    return { itemChoice };
+  },
   data() {
     return {
       audioFile: [
@@ -88,26 +113,26 @@ export default {
       indexItem: 0,
       linkVideo1: "https://www.youtube.com/embed/zGhyOJCJS2o",
       is3Min: false,
-      itemChoice: [
-        {
-          src: new URL("../../assets/slide/IMG_4720.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4721.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4722.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4723.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4724.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4725.jpg", import.meta.url).href,
-        },
-      ],
+      // itemChoice: [
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4720.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4721.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4722.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4723.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4724.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4725.jpg", import.meta.url).href,
+      //   },
+      // ],
     };
   },
 

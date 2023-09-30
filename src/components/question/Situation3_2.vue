@@ -49,6 +49,25 @@
 <script>
 export default {
   components: {},
+
+  setup(props) {
+    const itemChoice = [
+      {
+        src: new URL("../../assets/slide/IMG_4799.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4800.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4801.jpg", import.meta.url).href,
+      },
+      {
+        src: new URL("../../assets/slide/IMG_4802.jpg", import.meta.url).href,
+      },
+    ];
+
+    return { itemChoice };
+  },
   data() {
     return {
       indexItem: 0,
@@ -67,20 +86,20 @@ export default {
         },
       ],
 
-      itemChoice: [
-        {
-          src: new URL("../../assets/slide/IMG_4799.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4800.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4801.jpg", import.meta.url).href,
-        },
-        {
-          src: new URL("../../assets/slide/IMG_4802.jpg", import.meta.url).href,
-        },
-      ],
+      // itemChoice: [
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4799.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4800.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4801.jpg", import.meta.url).href,
+      //   },
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4802.jpg", import.meta.url).href,
+      //   },
+      // ],
     };
   },
 

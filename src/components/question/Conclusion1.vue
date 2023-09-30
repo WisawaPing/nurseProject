@@ -40,6 +40,16 @@
 <script>
 export default {
   components: {},
+
+  setup(props) {
+    const itemChoice = [
+      {
+        src: new URL("../../assets/slide/IMG_4737.jpg", import.meta.url).href,
+      },
+    ];
+
+    return { itemChoice };
+  },
   data() {
     return {
       indexItem: 0,
@@ -49,11 +59,11 @@ export default {
             .href,
         },
       ],
-      itemChoice: [
-        {
-          src: new URL("../../assets/slide/IMG_4737.jpg", import.meta.url).href,
-        },
-      ],
+      // itemChoice: [
+      //   {
+      //     src: new URL("../../assets/slide/IMG_4737.jpg", import.meta.url).href,
+      //   },
+      // ],
     };
   },
 
